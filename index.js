@@ -33,7 +33,7 @@ app.post("/quotes", function(req, res){
     })
 })
 app.put('/quotes',(req, res) => {
-    db.collection('quotes').findOneAndUpdate({name:null},{
+    db.collection('quotes').findOneAndUpdate({name:'phuc'},{
         $set:{
             name:req.body.name,
             quote: req.body.quote
