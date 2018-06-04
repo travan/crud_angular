@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-app="HelloQuotes" ng-controller="myQuotes as mq">
+    <ul class="quotes" ng-repeat="quote in mq.quotes">
+      <li>
+        <span>{{quote.name}}</span>
+        <span>{{quote.quote}}</span>
+      </li>
+    </ul>
+  <form ng-controller="createQuotes as cr" ng-submit="cr.addQ(quote)">
+    <input ng-model="quote.name" type="text" placeholder="name">
+    <input ng-model="quote.quote" type="text" placeholder="quote">
+    <button type="submit">submit</button>
+  </form>
+  <div ng-controller="updateQuotes as up" ng-submit="up.updateQ()">
+    <h2>Replace last quote</h2>
+    <button type="submit" ng-click="up.updateQ()">update</button>
+  </div>
+  <div ng-controller="deleleQuotes as de" ng-submit="de.deleteQ()">
+    <h2>Replace last quote</h2>
+    <button type="submit" ng-click="de.deleteQ()">delete</button>
+  </div>
+</body>
+</html>
